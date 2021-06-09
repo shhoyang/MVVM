@@ -1,0 +1,56 @@
+<resources>
+
+    <style name="ToolbarLayout">
+        <item name="toolbarLayoutId">@layout/toolbar</item>
+        <item name="toolbarBackgroundColor">@color/toolbarBackgroundColor</item>
+    </style>
+
+    <style name="EmptyView">
+        <item name="emptyViewIconColor">@color/emptyViewIconColor</item>
+        <item name="emptyViewTextSize">@dimen/emptyViewTextSize</item>
+        <item name="emptyViewTextColor">@color/emptyViewTextColor</item>
+        <item name="emptyViewLoadingText">@string/emptyViewLoadingText</item>
+        <item name="emptyViewNoDataText">@string/emptyViewNoDataText</item>
+        <item name="emptyViewLoadFailedText">@string/emptyViewLoadFailedText</item>
+        <item name="emptyViewNetworkUnavailableText">@string/emptyViewNetworkUnavailableText</item>
+        <item name="emptyViewLoadingLayoutId">@null</item>
+        <item name="emptyViewNoDataLayoutId">@null</item>
+        <item name="emptyViewLoadFailedLayoutId">@null</item>
+        <item name="emptyViewNetworkUnavailableLayoutId">@null</item>
+    </style>
+
+    <style name="Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Dialog2" parent="Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ConfirmDialog" parent="Dialog">
+        <item name="android:windowBackground">@drawable/dialog_bg_white</item>
+        <item name="confirmDialogWidthRate">0.8</item>
+        <item name="confirmDialogTitleTextSize">@dimen/confirmDialogTitleTextSize</item>
+        <item name="confirmDialogTitleTextColor">@color/confirmDialogTitleTextColor</item>
+        <item name="confirmDialogMessageTextSize">@dimen/confirmDialogMessageTextSize</item>
+        <item name="confirmDialogMessageTextColor">@color/confirmDialogMessageTextColor</item>
+        <item name="confirmDialogBtnTextSize">@dimen/confirmDialogBtnTextSize</item>
+        <item name="confirmDialogCancelBtnText">@string/confirmDialogCancelBtnText</item>
+        <item name="confirmDialogCancelBtnTextColor">@color/confirmDialogCancelBtnTextColor</item>
+        <item name="confirmDialogConfirmBtnText">@string/confirmDialogConfirmBtnText</item>
+        <item name="confirmDialogConfirmBtnTextColor">@color/confirmDialogConfirmBtnTextColor</item>
+        <item name="confirmDialogLineColor">@color/confirmDialogLineColor</item>
+    </style>
+
+    <style name="LoadingDialog" parent="Dialog">
+        <item name="android:windowBackground">@color/loadingDialogBackgroundColor</item>
+        <item name="loadingDialogWidthRate">0.6</item>
+        <item name="loadingDialogAssetFileName">def_loading.json</item>
+    </style>
+
+</resources>

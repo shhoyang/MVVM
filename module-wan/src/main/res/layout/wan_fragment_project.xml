@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mvvm.view.StatusBarPlaceholderView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.mvvm.view.ToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbarHeight"
+        app:toolbarShowBack="false"
+        app:toolbarTitleText="@string/wan_title_project" />
+
+    <com.mvvm.view.RefreshLayout2
+        android:id="@id/baseRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                app:elevation="0dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpType"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    app:layout_scrollFlags="scroll" />
+
+                <me.relex.circleindicator.CircleIndicator3
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:visibility="gone"
+                    app:ci_drawable="@drawable/wan_indicator_1"
+                    app:ci_drawable_unselected="@drawable/wan_indicator_0"
+                    app:ci_gravity="center"
+                    app:layout_scrollFlags="scroll" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/gray_white"
+                    android:visibility="gone"
+                    app:layout_scrollFlags="scroll" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.mvvm.view.EmptyView
+                android:id="@id/baseEmptyView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@id/baseRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.mvvm.view.EmptyView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.mvvm.view.RefreshLayout2>
+
+</LinearLayout>

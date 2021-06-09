@@ -1,0 +1,9 @@
+include ':app'
+include ':module-base'
+include ':module-user'
+include ':module-wan'
+include ':library-annotation'
+include ':library-compiler'
+include ':library'
+include ':library-webview'
+rootProject.name = "MVVM"

@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.github.dcendents.android-maven'
+}
+
+group = 'com.github.haoshiy'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+kapt {
+    arguments {
+        arg("DAGGER_VIEW_BINDING_FEATURE", "databinding")
+        arg("DAGGER_VIEW_MODEL_FEATURE", "viewmodel")
+        arg("DAGGER_ADAPTER_FEATURE", "adapter")
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api project(':library-annotation')
+    api androidxDependencies
+    api "androidx.room:room-runtime:$versions.room"
+    api "androidx.paging:paging-runtime-ktx:$versions.paging"
+    api "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+    api "androidx.lifecycle:lifecycle-reactivestreams-ktx:$versions.lifecycle"
+    api "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+    api "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+    api "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    api "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    api "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+    api 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    api 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    api 'com.github.zhaokaiqiang.klog:library:1.6.0'
+    api "com.github.bumptech.glide:glide:$versions.glide"
+    api 'com.airbnb.android:lottie:3.7.0'
+    api 'org.aspectj:aspectjrt:1.9.6'
+
+    kapt project(':library-compiler')
+    kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+    kapt "androidx.room:room-compiler:$versions.room"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+}

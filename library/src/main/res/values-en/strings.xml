@@ -1,0 +1,13 @@
+<resources>
+    <string name="appName">Library</string>
+
+    <string name="emptyViewLoadingText">Loading ...</string>
+    <string name="emptyViewNoDataText">No Data</string>
+    <string name="emptyViewLoadFailedText">Load Failed</string>
+    <string name="emptyViewNetworkUnavailableText">Network Error</string>
+
+    <string name="confirmDialogCancelBtnText">CANCEL</string>
+    <string name="confirmDialogConfirmBtnText">CONFIRM</string>
+
+    <string name="loadingDialogLoadingText">Loading ...</string>
+</resources>

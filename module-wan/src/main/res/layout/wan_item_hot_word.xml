@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mvvm.view.RoundTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="28dp"
+    android:gravity="center"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:singleLine="true"
+    android:textSize="12sp"
+    app:roundTextViewBorderColor="@color/text_link"
+    app:roundTextViewBorderWidth="0.5dp"
+    app:roundTextViewNormalTextColor="@color/text_link"
+    app:roundTextViewPressedColor="@color/light_grey"
+    app:roundTextViewRadius="32dp" />
+
+

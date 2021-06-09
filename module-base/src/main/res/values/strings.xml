@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">玩Android</string>
+    <string name="digits">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</string>
+</resources>
