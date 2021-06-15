@@ -28,14 +28,14 @@ object Config {
         var username: String? = null
         var token: String? = null
         HttpManager.COOKIE_CACHE.forEach {
-            if (it.name() == KEY_USERNAME) {
-                val value = it.value()
+            if (it.name == KEY_USERNAME) {
+                val value = it.value
                 if ("\"\"" != value) {
                     username = value
                 }
 
-            } else if (it.name() == KEY_TOKEN) {
-                val value = it.value()
+            } else if (it.name == KEY_TOKEN) {
+                val value = it.value
                 if ("\"\"" != value) {
                     token = value
                 }

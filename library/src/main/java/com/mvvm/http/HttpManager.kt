@@ -47,7 +47,7 @@ object HttpManager {
 
 
     fun cancelAllRequest() {
-        OK_HTTP_CLIENT.dispatcher().cancelAll()
+        OK_HTTP_CLIENT.dispatcher.cancelAll()
         PERSISTENT_COOKIE_JAR.clear()
     }
 }

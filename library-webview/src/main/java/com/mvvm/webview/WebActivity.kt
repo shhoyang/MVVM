@@ -9,7 +9,6 @@ import com.mvvm.webview.view.WebViewLoadListener
 
 /**
  * @author Yang Shihao
- * @Date 3/6/21
  */
 @AndroidEntryPoint(injectViewModel = false)
 class WebActivity : BaseWebActivity<ActivityWebBinding, PlaceholderViewModel>(),
