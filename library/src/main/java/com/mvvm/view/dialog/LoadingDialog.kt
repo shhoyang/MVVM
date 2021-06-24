@@ -18,6 +18,8 @@ class LoadingDialog(
 ) :
     BaseDialog<DialogLoadingBinding>(activity, themeResId) {
 
+    constructor(activity: Activity) : this(activity, MVVMLibrary.CONFIG.loadingDialogTheme)
+
     private var widthRate = 1.0F
     private var assetAssetName = "def_loading.json"
 

@@ -40,7 +40,7 @@ class EmptyView : FrameLayout {
     private var loadFailedLayoutId = 0
     private var networkUnavailableLayoutId = 0
 
-    private var contentViews: ArrayList<View>? = null
+    private val contentViews: ArrayList<View> by lazy { ArrayList() }
 
     private var state: Int by Delegates.observable(DISMISS) { _, old, new ->
         if (old != new) {
@@ -152,15 +152,15 @@ class EmptyView : FrameLayout {
 //        if (childCount > 5) {
 //            throw IllegalStateException("EmptyView can only have one child view")
 //        }
+
         if (childCount > 4) {
-            contentViews = ArrayList()
+            contentViews.clear()
             for (i in 4 until childCount) {
                 contentViews!!.add(getChildAt(i))
             }
         }
 
         viewBinding.apply {
-
             setStateUI(
                 emptyViewLoading,
                 loadingLayoutId,

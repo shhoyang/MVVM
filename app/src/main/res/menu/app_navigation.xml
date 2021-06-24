@@ -16,8 +16,4 @@
         android:id="@+id/tab_search"
         android:icon="@drawable/app_ic_search"
         android:title="@string/app_tab_search" />
-    <item
-        android:id="@+id/tab_user"
-        android:icon="@drawable/app_ic_search"
-        android:title="我的" />
 </menu>

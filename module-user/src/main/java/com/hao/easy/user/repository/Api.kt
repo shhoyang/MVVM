@@ -25,6 +25,10 @@ interface Service {
     @POST("user/login")
     fun login(@FieldMap params: HashMap<String, Any>): Observable<HttpResult<User>>
 
+    @FormUrlEncoded
+    @POST("user/login")
+    suspend fun login2(@FieldMap params: HashMap<String, Any>): HttpResult<User>
+
     @GET("user/logout/json")
     fun logout(): Observable<HttpResult<User>>
 }

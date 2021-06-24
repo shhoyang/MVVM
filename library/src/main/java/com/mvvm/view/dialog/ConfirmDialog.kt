@@ -9,6 +9,7 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.annotation.StyleRes
 import com.mvvm.MVVMLibrary
+import com.mvvm.R
 import com.mvvm.databinding.DialogConfirmBinding
 import com.mvvm.extensions.gone
 import com.mvvm.extensions.visible
@@ -27,11 +28,20 @@ class ConfirmDialog(
     View.OnClickListener,
     DialogInterface.OnCancelListener {
 
+    private var widthRate = 0.75F
+
     override fun getVB() = DialogConfirmBinding.inflate(layoutInflater)
+
+    override fun parseTheme() {
+        context.obtainStyledAttributes(R.styleable.ConfirmDialog).apply {
+            widthRate = getFloat(R.styleable.ConfirmDialog_confirmDialogWidthRate, widthRate)
+            recycle()
+        }
+    }
 
     override fun setWindowParams(window: Window) {
         val attributes = window.attributes
-        attributes.width = DisplayUtils.getScreenWidth(activity) / 5 * 4
+        attributes.width = (DisplayUtils.getScreenWidth(activity) * widthRate).toInt()
         attributes.height = WindowManager.LayoutParams.WRAP_CONTENT
         attributes.gravity = Gravity.CENTER
         window.attributes = attributes

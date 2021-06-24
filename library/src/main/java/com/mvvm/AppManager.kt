@@ -33,6 +33,17 @@ class AppManager private constructor() {
         process { it != activity }
     }
 
+    /**
+     * 当前activity
+     */
+    fun currentActivity(): Activity? {
+        return if (list.isEmpty()) {
+            null
+        } else {
+            list.last()
+        }
+    }
+
     fun exit() {
         process { true }
         android.os.Process.killProcess(android.os.Process.myPid())
@@ -53,6 +64,10 @@ class AppManager private constructor() {
                 iterator.remove()
             }
         }
+    }
+
+    fun getActivities(): List<Activity> {
+        return list
     }
 
     companion object {

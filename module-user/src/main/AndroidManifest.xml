@@ -6,6 +6,7 @@
         <activity
             android:name="com.hao.easy.user.activity.LoginActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTop"
             android:theme="@style/LoginTheme" />
         <activity
             android:name="com.hao.easy.user.activity.AboutActivity"
